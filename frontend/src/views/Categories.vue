@@ -119,11 +119,17 @@ const filteredCategories = computed(() => {
 })
 
 const defaultCategories = computed(() => {
-  return filteredCategories.value.filter(cat => cat.is_default === 1)
+  return filteredCategories.value.filter(cat => {
+    const isDefault = cat.isDefault !== undefined ? cat.isDefault : cat.is_default
+    return isDefault === 1
+  })
 })
 
 const customCategories = computed(() => {
-  return filteredCategories.value.filter(cat => cat.is_default === 0)
+  return filteredCategories.value.filter(cat => {
+    const isDefault = cat.isDefault !== undefined ? cat.isDefault : cat.is_default
+    return isDefault === 0
+  })
 })
 
 const loadCategories = async () => {
