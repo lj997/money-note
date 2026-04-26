@@ -202,7 +202,6 @@ const updateLineChart = () => {
       {
         name: '收入',
         type: 'line',
-        stack: 'Total',
         smooth: true,
         lineStyle: {
           width: 3
@@ -221,7 +220,6 @@ const updateLineChart = () => {
       {
         name: '支出',
         type: 'line',
-        stack: 'Total',
         smooth: true,
         lineStyle: {
           width: 3
